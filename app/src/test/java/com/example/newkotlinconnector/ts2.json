@@ -1,0 +1,101 @@
+{
+  "version": "3.0",
+  "user": "ldarolti",
+  "dateGenerated": "2023-03-22T10:36:25Z",
+  "status": "OK",
+  "data": [
+    {
+      "parameter": "t_2m:C",
+      "coordinates": [
+        {
+          "station_id": "postal_CH9000",
+          "dates": [
+            {
+              "date": "2022-11-17T12:00:00Z",
+              "value": 10.7
+            },
+            {
+              "date": "2022-11-17T13:00:00Z",
+              "value": 10.9
+            }
+          ]
+        },
+        {
+          "station_id": "postal_CH9050",
+          "dates": [
+            {
+              "date": "2022-11-17T12:00:00Z",
+              "value": 11.2
+            },
+            {
+              "date": "2022-11-17T13:00:00Z",
+              "value": 13.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "parameter": "t_2m:K",
+      "coordinates": [
+        {
+          "station_id": "postal_CH9000",
+          "dates": [
+            {
+              "date": "2022-11-17T12:00:00Z",
+              "value": 283.8
+            },
+            {
+              "date": "2022-11-17T13:00:00Z",
+              "value": 284.0
+            }
+          ]
+        },
+        {
+          "station_id": "postal_CH9050",
+          "dates": [
+            {
+              "date": "2022-11-17T12:00:00Z",
+              "value": 284.3
+            },
+            {
+              "date": "2022-11-17T13:00:00Z",
+              "value": 286.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "parameter": "t_2m:F",
+      "coordinates": [
+        {
+          "station_id": "postal_CH9000",
+          "dates": [
+            {
+              "date": "2022-11-17T12:00:00Z",
+              "value": 51.3
+            },
+            {
+              "date": "2022-11-17T13:00:00Z",
+              "value": 51.6
+            }
+          ]
+        },
+        {
+          "station_id": "postal_CH9050",
+          "dates": [
+            {
+              "date": "2022-11-17T12:00:00Z",
+              "value": 52.2
+            },
+            {
+              "date": "2022-11-17T13:00:00Z",
+              "value": 56.7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
