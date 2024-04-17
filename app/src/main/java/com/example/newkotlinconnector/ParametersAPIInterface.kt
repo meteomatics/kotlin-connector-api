@@ -1,5 +1,6 @@
 package com.example.newkotlinconnector
 
+import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -19,7 +20,7 @@ interface ParametersAPIInterface {
     suspend fun postRequest(
         @HeaderMap headers: Map<String, String>,
         @Url url: String,
-        @Body body: String,
+        @Body body: RequestBody,
     ): Response<Parameters>
 
 }
