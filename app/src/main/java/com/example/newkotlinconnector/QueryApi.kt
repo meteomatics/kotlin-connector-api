@@ -1,6 +1,8 @@
 package com.example.newkotlinconnector
 
 import okhttp3.Credentials
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -49,11 +51,22 @@ class QueryApi {
                 parametersList += "ens_select=${optionalParams[4]}"
             }
 
-            response = RetrofitInstance.api.postRequest(
-                headers,
-                URL,
-                BODY + parametersList.joinToString { "&" }
-            ).body() as Parameters
+            response = try {
+                val postBody = BODY + parametersList.joinToString("&")
+                val requestBody = postBody.toRequestBody("application/json".toMediaTypeOrNull())
+                val postRequest = RetrofitInstance.api.postRequest(
+                    headers,
+                    URL,
+                    requestBody
+                )
+                postRequest.body()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: HttpException) {
+                e.printStackTrace()
+            } catch (e: NullPointerException) {
+                e.printStackTrace()
+            } as Parameters
         }
         return response
     }
