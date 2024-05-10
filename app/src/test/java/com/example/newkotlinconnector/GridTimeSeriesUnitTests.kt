@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter
 class GridTimeSeriesUnitTests {
 
     val dataFromFile = Gson().fromJson(
-        FileReader("src/main/res/testData/gridts1.json"),
+        FileReader("src/test/testData/gridts1.json"),
         Parameters::class.java
     )
     val actualDf = QueryGridTimeSeries().dataToDataFrame(dataFromFile)
