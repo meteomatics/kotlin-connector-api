@@ -7,7 +7,7 @@ import java.io.FileReader
 
 class GridUnitTests {
     val dataFromFile = Gson().fromJson(
-        FileReader("src/main/res/testData/grid1.json"),
+        FileReader("src/test/testData/grid1.json"),
         Parameters::class.java
     )
     val actualDf = QueryGrid().dataToDataFrame(dataFromFile)

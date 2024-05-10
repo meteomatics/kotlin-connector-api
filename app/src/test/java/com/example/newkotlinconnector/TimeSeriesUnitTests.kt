@@ -9,10 +9,10 @@ import java.time.format.DateTimeFormatter
 
 class TimeSeriesUnitTests {
     val dataFromFile_1 = Gson().fromJson(
-        FileReader("src/main/res/testData/ts1.json"), Parameters::class.java
+        FileReader("src/test/testData/ts1.json"), Parameters::class.java
     )
     val dataFromFile_2 = Gson().fromJson(
-        FileReader("src/main/res/testData/ts2.json"), Parameters::class.java
+        FileReader("src/test/testData/ts2.json"), Parameters::class.java
     )
     val actualDf_1 = QueryTimeSeries().dataToDataFrame(
         dataFromFile_1, listOf("51.5073219,-0.1276474", "35.3954127,-97.5959882")
