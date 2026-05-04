@@ -55,8 +55,7 @@ class QueryGrid {
         requestType: String = "GET"
     ): DataFrame<Coordinate> {
         val on_invalid: String? = null
-        val cluster_select: String? = null
-        val optionalParams = listOf(model, interp_select, on_invalid, cluster_select, ens_select)
+        val optionalParams = listOf(model, interp_select, on_invalid, ens_select)
         val URL = BuildYourUrl().buildUrlGrid(
             startdate,
             parameter,

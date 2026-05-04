@@ -73,8 +73,7 @@ class QueryGridTimeSeries {
         on_invalid: String? = null,
         requestType: String = "GET"
     ): DataFrame<Coordinate> {
-        val cluster_select: String? = null
-        val optionalParams = listOf(model, interp_select, on_invalid, cluster_select, ens_select)
+        val optionalParams = listOf(model, interp_select, on_invalid, ens_select)
         val URL = BuildYourUrl().buildUrlGridTimeSeries(
             startdate,
             enddate,

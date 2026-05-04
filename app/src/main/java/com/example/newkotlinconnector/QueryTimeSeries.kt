@@ -102,10 +102,9 @@ class QueryTimeSeries {
         ens_select: String? = null,
         interp_select: String? = null,
         on_invalid: String? = null,
-        requestType: String = "GET",
-        cluster_select: String? = null
+        requestType: String = "GET"
     ): DataFrame<Date> {
-        val optionalParams = listOf(model, interp_select, on_invalid, cluster_select, ens_select)
+        val optionalParams = listOf(model, interp_select, on_invalid, ens_select)
         val URL = BuildYourUrl().buildUrlTimeSeries(
             startdate,
             enddate,
