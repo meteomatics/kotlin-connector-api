@@ -27,11 +27,12 @@ class QueryApi {
                     optionalParams[0],
                     optionalParams[1],
                     optionalParams[2],
-                    optionalParams[3],
-                    optionalParams[4]
+                    optionalParams[3]
                 ).body()
             } catch (e: IOException) {
+                e.printStackTrace()
             } catch (e: HttpException) {
+                e.printStackTrace()
             } as Parameters
         } else {
             var parametersList: List<String> = emptyList<String>().toMutableList()
@@ -45,10 +46,7 @@ class QueryApi {
                 parametersList += "onInvalid=${optionalParams[2]}"
             }
             if (optionalParams[3] != null) {
-                parametersList += "cluster_select=${optionalParams[3]}"
-            }
-            if (optionalParams[4] != null) {
-                parametersList += "ens_select=${optionalParams[4]}"
+                parametersList += "ens_select=${optionalParams[3]}"
             }
 
             response = try {

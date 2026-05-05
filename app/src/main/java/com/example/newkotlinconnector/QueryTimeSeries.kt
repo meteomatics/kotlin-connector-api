@@ -8,10 +8,10 @@ import java.time.format.DateTimeFormatter
 
 class QueryTimeSeries {
     fun dataToDataFrame(
-        query_response: Parameters,
-        coordinate_list: List<String>
+        queryResponse: Parameters,
+        coordinateList: List<String>
     ): DataFrame<Date> {
-        val response = query_response.data
+        val response = queryResponse.data
 
         // add first set of coordinates
         var dataframe = emptyDataFrame<Date>()
@@ -19,7 +19,7 @@ class QueryTimeSeries {
         // add lat and lon if coordinates
         // add postal_code if postal code
         // only works for all postal codes or all coordinates
-        if (coordinate_list[0].startsWith("postal_")) {
+        if (coordinateList[0].startsWith("postal_")) {
             val postal_code = emptyList<String?>().toMutableList()
             for (i in 0 until response[0].coordinates[0].dates.size) {
                 postal_code.add(response[0].coordinates[0].station_id)
@@ -91,7 +91,7 @@ class QueryTimeSeries {
 
 
     suspend fun queryTimeSeries(
-        coordinate_list: List<String>,
+        coordinateList: List<String>,
         startdate: String,
         enddate: String,
         interval: String,
@@ -99,19 +99,18 @@ class QueryTimeSeries {
         username: String,
         password: String,
         model: String? = null,
-        ens_select: String? = null,
-        interp_select: String? = null,
-        on_invalid: String? = null,
-        requestType: String = "GET",
-        cluster_select: String? = null
+        ensSelect: String? = null,
+        interpSelect: String? = null,
+        onInvalid: String? = null,
+        requestType: String = "GET"
     ): DataFrame<Date> {
-        val optionalParams = listOf(model, interp_select, on_invalid, cluster_select, ens_select)
+        val optionalParams = listOf(model, interpSelect, onInvalid, ensSelect)
         val URL = BuildYourUrl().buildUrlTimeSeries(
             startdate,
             enddate,
             interval,
             parameters,
-            coordinate_list
+            coordinateList
         )
         val response = QueryApi().queryApi(
             URL[0], URL[1], optionalParams,
@@ -120,6 +119,6 @@ class QueryTimeSeries {
             requestType = requestType
         )
 
-        return QueryTimeSeries().dataToDataFrame(response, coordinate_list)
+        return QueryTimeSeries().dataToDataFrame(response, coordinateList)
     }
 }

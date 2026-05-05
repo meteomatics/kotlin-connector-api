@@ -12,7 +12,6 @@ interface ParametersAPIInterface {
         @Query("model") model: String?,
         @Query("interp_select") interp_select: String?,
         @Query("on_invalid") on_invalid: String?,
-        @Query("cluster_select") cluster_select: String?,
         @Query("ens_select") ens_select: String?
     ): Response<Parameters>
 
