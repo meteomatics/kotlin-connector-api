@@ -30,7 +30,9 @@ class QueryApi {
                     optionalParams[3]
                 ).body()
             } catch (e: IOException) {
+                e.printStackTrace()
             } catch (e: HttpException) {
+                e.printStackTrace()
             } as Parameters
         } else {
             var parametersList: List<String> = emptyList<String>().toMutableList()
